@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- General description of your Web application -->
+    <display-name>
+        NomeDisplayDellaWebApplication
+        Viene visualizzato dall’admin
+    </display-name>
+
+    <description>
+        Si tratta di un’applcazione dove facciamo
+        Esempi di servlet.
+    </description>
+
+    <!-- Servlet definitions -->
+    <servlet>
+        <servlet-name>Paperino</servlet-name>
+        <description>Una servlet che gestisce le richieste di GET</description>
+        <servlet-class>PaperinoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>RedirectServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CookiesServlet</servlet-name>
+        <servlet-class>CookiesServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>Paperino</servlet-name>
+        <url-pattern>/servlet/Paperino</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RedirectServlet</servlet-name>
+        <url-pattern>/servlet/Redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CookiesServlet</servlet-name>
+        <url-pattern>/servlet/Cookies</url-pattern>
+    </servlet-mapping>
+
+</web-app>
