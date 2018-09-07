@@ -27,6 +27,8 @@
 %>
 
 
+<br>
+
 
 <h3>Foreach Cookies Example:</h3>
 <div style="background: #dfdfdf; padding: 10px;">
@@ -44,6 +46,8 @@
 <br>
 <% } %>
 
+
+<br>
 
 
 </body>
