@@ -45,9 +45,9 @@
 <h3>Foreach Cookies Example:</h3>
 <div class="example src">
     &lt;% if (!Objects.isNull(request.getCookies())) {<br>
-    &lt;% &nbsp; for (Cookie cooky : request.getCookies()) { %><br>
-    &lt;%= "cooky name: "+cooky.getName() %><br>
-    &lt;%= "cooky value: "+cooky.getValue() %><br>
+    &emsp;&emsp; for (Cookie cooky : request.getCookies()) { %><br>
+    &lt;%= &ensp; "cooky name: "+cooky.getName() %><br>
+    &lt;%= &ensp; "cooky value: "+cooky.getValue() %><br>
     &lt;% &nbsp; } %><br>
     &lt;% } %><br>
 </div>
@@ -67,11 +67,11 @@
 <h3>Foreach Session Example:</h3>
 <div class="example src">
     &lt;% if (!Objects.isNull(session)) {<br>
-    &emsp;&thinsp;&thinsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br>
-    &lt;% while (sessionAttributeNames.hasMoreElements()) {<br>
-    &emsp;&emsp; String attrName = sessionAttributeNames.nextElement(); <br>
-    &lt;%= "session-attribute name: "+attrName %><br>
-    &lt;%= "session-attribute value: "+session.getAttribute(attrName) %><br>
+    &emsp;&emsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br>
+    &emsp;&emsp; while (sessionAttributeNames.hasMoreElements()) {<br>
+    &emsp;&emsp;&emsp; String attrName = sessionAttributeNames.nextElement(); %><br>
+    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute name: "+attrName %><br>
+    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute value: "+session.getAttribute(attrName) %><br>
     &lt;% &nbsp; } %><br>
     &lt;% } %><br>
 </div>
