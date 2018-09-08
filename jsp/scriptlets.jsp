@@ -1,5 +1,4 @@
 <%@ page import="java.util.Objects" %>
-<%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.Enumeration" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -7,6 +6,17 @@
 <head>
     <meta charset="UTF-8" />
     <title>Scriptlets JSP</title>
+    <style>
+        div.example {
+            padding: 10px;
+        }
+        div.example.src {
+            background: #dfdfdf;
+        }
+        div.example.code {
+            background: #c3dfaf;
+        }
+    </style>
 </head>
 <body bgcolor="white">
 <h1>Scriptlets JSP</h1>
@@ -14,12 +24,12 @@
 
 
 <h3>Foreach Example:</h3>
-<div style="background: #dfdfdf; padding: 10px;">
+<div class="example src">
     &lt;% for (int i = 1; i <= 5; i++) { %><br>
     &lt;%= i %>) Ciao Mondo!<br>
     &lt;% } %><br>
 </div>
-<br>
+<div class="example code">
 <%
     for (int i = 1; i <= 5; i++)
     {
@@ -28,13 +38,12 @@
 <%
     }
 %>
+</div>
 
-
-<br>
 
 
 <h3>Foreach Cookies Example:</h3>
-<div style="background: #dfdfdf; padding: 10px;">
+<div class="example src">
     &lt;% if (!Objects.isNull(request.getCookies())) {<br>
     &lt;% &nbsp; for (Cookie cooky : request.getCookies()) { %><br>
     &lt;%= "cooky name: "+cooky.getName() %><br>
@@ -42,21 +51,21 @@
     &lt;% &nbsp; } %><br>
     &lt;% } %><br>
 </div>
-<br>
+<div class="example code">
 <% if (!Objects.isNull(request.getCookies())) {
     for (Cookie cooky : request.getCookies()) { %>
 <%= "cooky name: "+cooky.getName() %><br>
 <%= "cooky value: "+cooky.getValue() %><br>
-<br>
 <%  } %>
 <% } %>
+</div>
 
 
 <br>
 
 
 <h3>Foreach Session Example:</h3>
-<div style="background: #dfdfdf; padding: 10px;">
+<div class="example src">
     &lt;% if (!Objects.isNull(session)) {<br>
     &emsp;&thinsp;&thinsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br>
     &lt;% while (sessionAttributeNames.hasMoreElements()) {<br>
@@ -66,18 +75,16 @@
     &lt;% &nbsp; } %><br>
     &lt;% } %><br>
 </div>
-<br>
-
+<div class="example code">
 <% if (!Objects.isNull(session)) {
     Enumeration<String> sessionAttributeNames = session.getAttributeNames();
     while (sessionAttributeNames.hasMoreElements()) {
         String attrName = sessionAttributeNames.nextElement(); %>
 <%=     "session-attribute name: "+attrName %><br>
 <%=     "session-attribute value: "+session.getAttribute(attrName) %><br>
-<br>
 <%  } %>
 <% } %>
-
+</div>
 
 <br>
 
