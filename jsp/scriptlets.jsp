@@ -30,16 +30,11 @@
     &lt;% } %><br>
 </div>
 <div class="example code">
-<%
-    for (int i = 1; i <= 5; i++)
-    {
-%>
+<% for (int i = 1; i <= 5; i++) { %>
 <%= i %>) Ciao Mondo!<br>
-<%
-    }
-%>
+<% } %>
 </div>
-
+<br>
 
 
 <h3>Foreach Cookies Example:</h3>
@@ -59,8 +54,6 @@
 <%  } %>
 <% } %>
 </div>
-
-
 <br>
 
 
@@ -85,7 +78,6 @@
 <%  } %>
 <% } %>
 </div>
-
 <br>
 
 
