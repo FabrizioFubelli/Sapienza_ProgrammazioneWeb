@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -32,18 +33,20 @@
 
 <h3>Foreach Cookies Example:</h3>
 <div style="background: #dfdfdf; padding: 10px;">
-&lt;% for (Cookie cooky : request.getCookies()) { %><br>
+&lt;% if (!Objects.isNull(request.getCookies())) {<br>
+&lt;% &nbsp; for (Cookie cooky : request.getCookies()) { %><br>
 &lt;%= cooky.getName() %><br>
 &lt;%= cooky.getValue() %><br>
+&lt;% &nbsp; } %><br>
 &lt;% } %><br>
 </div>
 <br>
-<%
-    for (Cookie cooky : request.getCookies()) {
-%>
+<% if (!Objects.isNull(request.getCookies())) {
+    for (Cookie cooky : request.getCookies()) { %>
 <%= "cooky name: "+cooky.getName() %><br>
 <%= "cooky value: "+cooky.getValue() %><br>
 <br>
+<%  } %>
 <% } %>
 
 
