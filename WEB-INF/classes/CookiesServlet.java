@@ -20,8 +20,16 @@ public class CookiesServlet extends HttpServlet {
         throws ServletException, IOException {
         String language = request.getParameter( "language" );
         String isbn = books.get( language ).toString();
-        Cookie cookie = new Cookie(language, isbn);
-        response.addCookie( cookie ); // must precede getWriter
+
+        // must precede getWriter
+        if (request.isRequestedSessionIdFromCookie()) {
+            Cookie cookie = new Cookie(language, isbn);
+            response.addCookie(cookie);
+        } else if (request.isRequestedSessionIdFromURL()) {
+            // if browser hasn't cookies allowed
+            request.getSession().setAttribute(language, isbn);
+        }
+
         response.setContentType( "text/html" );
         PrintWriter out = response.getWriter();
 
@@ -43,11 +51,11 @@ public class CookiesServlet extends HttpServlet {
         out.println( "<p>Welcome to Cookies! You selected " +
                 language + "</p>" );
 
-        out.println( "<p><a href = " +
-                "\"/html/cookies.html\">" +
+        out.println( "<p><a href=" +
+                "\""+response.encodeURL("/jsp/cookies.jsp")+"\">" +
                 "Click here to choose another language</a></p>" );
 
-        out.println( "<p><a href = \"/servlet/Cookies\">" +
+        out.println( "<p><a href=\""+response.encodeURL("/servlet/Cookies")+"\">" +
                 "Click here to get book recommendations</a></p>" );
         out.println( "</body>" );
 
@@ -60,21 +68,28 @@ public class CookiesServlet extends HttpServlet {
     // containing recommended books
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        Cookie cookies[] = request.getCookies(); // get cookies
 
-        request.setAttribute("cookies", cookies);
+        // must precede getWriter
+        Cookie cookies[] = null;
+        HttpSession session = null;
+        if (request.isRequestedSessionIdFromCookie()) {
+            cookies = request.getCookies(); // get cookies
+        } else if (request.isRequestedSessionIdFromURL()) {
+            // if browser hasn't cookies allowed
+            session = request.getSession(); // get session
+        }
 
         response.setContentType( "text/html" );
         PrintWriter out = response.getWriter();
 
         // start XHTML document
-        out.println( "<?xml version = \"1.0\"?>" );
+        out.println( "<?xml version=\"1.0\"?>" );
 
         out.println( "<!DOCTYPE html PUBLIC \"-//W3C//DTD " +
                 "XHTML 1.0 Strict//EN\" \"http://www.w3.org" +
                 "/TR/xhtml1/DTD/xhtml1-strict.dtd\">" );
 
-        out.println( "<html xmlns = \"http://www.w3.org/1999/xhtml\">" );
+        out.println( "<html xmlns=\"http://www.w3.org/1999/xhtml\">" );
 
         // head section of document
         out.println( "<head>" );
@@ -85,16 +100,31 @@ public class CookiesServlet extends HttpServlet {
         out.println( "<body>" );
 
         // if there are any cookies, recommend a book for each ISBN
-        if ( cookies != null && cookies.length != 0 ) {
-            out.println( "<h1>Recommendations</h1>" );
+        if ( cookies != null && cookies.length > 1 ) {
+            out.println( "<h1>Recommendations (saved in cookies)</h1>" );
             out.println( "<p>" );
             // get the name of each cookie
             for (Cookie cooky : cookies) {
-                String cookyName = cooky.getName();
-                if (books.containsKey(cookyName)) {
-                    out.println(cookyName +
+                String language = cooky.getName();
+                if (books.containsKey(language)) {
+                    String isbn = cooky.getValue();
+                    out.println(language +
                             " How to Program. ISBN#: " +
-                            cooky.getValue() + "<br/>");
+                            isbn + "<br/>");
+                }
+            }
+            out.println( "</p>" );
+        } else if (session != null) { // try to get preferences by session
+            out.println( "<h1>Recommendations (saved in session)</h1>" );
+            out.println( "<p>" );
+            Enumeration<String> sessionAttributeNames = session.getAttributeNames();
+            while (sessionAttributeNames.hasMoreElements()) {
+                String language = sessionAttributeNames.nextElement();
+                if (books.containsKey(language)) {
+                    String isbn = (String) session.getAttribute(language);
+                    out.println(language +
+                            " How to Program. ISBN#: " +
+                            isbn + "<br/>");
                 }
             }
             out.println( "</p>" );
