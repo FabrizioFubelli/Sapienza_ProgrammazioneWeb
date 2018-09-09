@@ -11,19 +11,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Default Java Server settings</title>
-    <style>
-        div.example {
-            padding: 10px;
-            min-width: 900px;
-            overflow: scroll;
-        }
-        div.example.src {
-            background: #dfdfdf;
-        }
-        div.example.code {
-            background: #c3dfaf;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css"/>
 </head>
 <body>
 

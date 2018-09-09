@@ -1,0 +1,14 @@
+div.example {
+    padding: 10px;
+    overflow: auto;
+    max-width: 100%;
+}
+div.example > div {
+    min-width: 900px;
+}
+div.example.src {
+    background: #dfdfdf;
+}
+div.example.code {
+    background: #c3dfaf;
+}

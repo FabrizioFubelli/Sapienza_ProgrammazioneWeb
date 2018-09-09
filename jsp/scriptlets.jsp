@@ -6,19 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Scriptlets JSP</title>
-    <style>
-        div.example {
-            padding: 10px;
-            min-width: 900px;
-            overflow: scroll;
-        }
-        div.example.src {
-            background: #dfdfdf;
-        }
-        div.example.code {
-            background: #c3dfaf;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css"/>
 </head>
 <body bgcolor="white">
 <h1>Scriptlets JSP</h1>
