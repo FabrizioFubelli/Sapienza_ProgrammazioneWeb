@@ -23,9 +23,19 @@ public class RedirectServlet extends HttpServlet {
                     return;
             }
         }
-
         // codice che viene eseguito solo se questa servlet non riesce a redirigere
         request.setAttribute("error", location != null ? "Parameter page: \""+location+"\" is not valid" : "Parameter page required");
-        request.getRequestDispatcher(response.encodeURL("/jsp/redirect_2.jsp")).forward(request, response);
+
+        // An other way to get the RequestDispatcher:
+        //this.getServletContext().getRequestDispatcher("/jsp/redirect_2.jsp").forward(request, response);
+
+        PrintWriter out = response.getWriter();
+        request.getRequestDispatcher("/jsp/redirect_2.jsp").include(request, response);
+
+        // With forward, the "Included jsp: /jsp/redirect_2.jsp" text will not write
+        //request.getRequestDispatcher("/jsp/redirect_2.jsp").forward(request, response);
+
+        out.println("\nIncluded jsp: /jsp/redirect_2.jsp");
+        out.close();
     }
 }
