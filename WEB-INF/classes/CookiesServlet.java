@@ -25,9 +25,10 @@ public class CookiesServlet extends HttpServlet {
         if (request.isRequestedSessionIdFromCookie()) {
             Cookie cookie = new Cookie(language, isbn);
             response.addCookie(cookie);
-        } else if (request.isRequestedSessionIdFromURL()) {
+        } else { // if (request.isRequestedSessionIdFromURL()) -> with getSession(true), a new session
+                 //                                               will be eventually created
             // if browser hasn't cookies allowed
-            request.getSession().setAttribute(language, isbn);
+            request.getSession(true).setAttribute(language, isbn);
         }
 
         response.setContentType( "text/html" );
@@ -128,7 +129,7 @@ public class CookiesServlet extends HttpServlet {
                 }
             }
             out.println( "</p>" );
-        } else { // there were no cookies
+        } else { // there were no cookies and no session
             out.println( "<h1>No Recommendations</h1>" );
             out.println( "<p>You did not select a language.</p>" );
         }
