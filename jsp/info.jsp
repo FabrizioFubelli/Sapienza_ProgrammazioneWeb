@@ -16,7 +16,7 @@
 <h1>Default Java Server settings</h1>
 
 <div class="example src">
-    <a href="<%= response.encodeURL(request.getServletPath())+"?param1=test" %>"><button>&lt;%= response.encodeURL(request.getServletPath())+"?param1=test" %></button></a>
+    <a href="<%= response.encodeURL(request.getServletPath())+"?param1=test" %>"><button><\%= response.encodeURL(request.getServletPath())+"?param1=test" %></button></a>
 </div>
 <div class="example code">
     <a href="<%= response.encodeURL(request.getServletPath())+"?param1=test" %>"><button><%= response.encodeURL(request.getServletPath())+"?param1=test" %></button></a>
@@ -26,17 +26,17 @@
 
 <h3>Request Info:</h3>
 <div class="example src">
-    request.getMethod() = &lt;%= request.getMethod() %><br/>
-    request.getPathInfo() = &lt;%= request.getPathInfo() %><br/>
-    request.getRequestURI() = &lt;%= request.getRequestURI() %><br/>
-    request.getRequestURL().toString() = &lt;%= request.getRequestURL().toString() %><br/>
-    request.getServletPath() = &lt;%= request.getServletPath() %><br/>
-    request.isRequestedSessionIdFromURL() = &lt;%= request.isRequestedSessionIdFromURL() %><br/>
-    request.isRequestedSessionIdFromCookie() = &lt;%= request.isRequestedSessionIdFromCookie() %><br/>
-    request.isRequestedSessionIdValid() = &lt;%= request.isRequestedSessionIdValid() %><br/>
-    request.getAuthType() = &lt;%= request.getAuthType() %><br/>
+    request.getMethod() = <\%= request.getMethod() %><br/>
+    request.getPathInfo() = <\%= request.getPathInfo() %><br/>
+    request.getRequestURI() = <\%= request.getRequestURI() %><br/>
+    request.getRequestURL().toString() = <\%= request.getRequestURL().toString() %><br/>
+    request.getServletPath() = <\%= request.getServletPath() %><br/>
+    request.isRequestedSessionIdFromURL() = <\%= request.isRequestedSessionIdFromURL() %><br/>
+    request.isRequestedSessionIdFromCookie() = <\%= request.isRequestedSessionIdFromCookie() %><br/>
+    request.isRequestedSessionIdValid() = <\%= request.isRequestedSessionIdValid() %><br/>
+    request.getAuthType() = <\%= request.getAuthType() %><br/>
     <strong>Request headers:</strong><br/>
-    &lt;%<br/>
+    <\%<br/>
     &emsp;Enumeration&lt;String> requestHeaderNames = request.getHeaderNames();<br/>
     &emsp;while (requestHeaderNames.hasMoreElements()) {<br/>
     &emsp;&emsp;String key = requestHeaderNames.nextElement();<br/>
@@ -44,7 +44,7 @@
     &emsp;}<br/>
     %><br/>
     <strong>Request parameters:</strong><br/>
-    &lt;%<br/>
+    <\%<br/>
     &emsp;Enumeration&lt;String> requestParameterNames = request.getParameterNames();<br/>
     &emsp;while (requestParameterNames.hasMoreElements()) {<br/>
     &emsp;&emsp;String key = requestParameterNames.nextElement();<br/>
@@ -85,9 +85,9 @@
 
 <h3>Response Info:</h3>
 <div class="example src">
-    response.getStatus() = &lt;%= response.getStatus() %><br/>
+    response.getStatus() = <\%= response.getStatus() %><br/>
     <strong>Response headers:</strong><br/>
-    &lt;%<br/>
+    <\%<br/>
     &emsp;for (String key : response.getHeaderNames()) {<br/>
     &emsp;&emsp;out.print(key + " => " + response.getHeader(key) + "&lt;br/>");<br/>
     &emsp;}<br/>
@@ -108,7 +108,7 @@
 
 <h3>Cookies Info:</h3>
 <div class="example src">
-    &lt;%<br/>
+    <\%<br/>
     &emsp;Cookie[] cookies = request.getCookies();<br/>
     &emsp;if (cookie != null) {<br/>
     &emsp;&emsp;for (Cookie cookie : cookies) {<br/>
@@ -149,12 +149,12 @@
 
 <h3>Session Info:</h3>
 <div class="example src">
-    session.getId() = &lt;%= session.getId() %><br/>
-    session.isNew() = &lt;%= session.isNew() %><br/>
-    session.getMaxInactiveInterval() = &lt;%= session.getMaxInactiveInterval() %> // This session expire in <%= session.getMaxInactiveInterval() %> seconds of inactivity<br/>
-    session.setMaxInactiveInterval(7); &lt;% session.setMaxInactiveInterval(7); %> // This session will expire in 7 seconds of inactivity<br/>
+    session.getId() = <\%= session.getId() %><br/>
+    session.isNew() = <\%= session.isNew() %><br/>
+    session.getMaxInactiveInterval() = <\%= session.getMaxInactiveInterval() %> // This session expire in <%= session.getMaxInactiveInterval() %> seconds of inactivity<br/>
+    session.setMaxInactiveInterval(7); <\% session.setMaxInactiveInterval(7); %> // This session will expire in 7 seconds of inactivity<br/>
     <strong>Get session attributes:</strong><br/>
-    &lt;%<br/>
+    <\%<br/>
     &emsp;Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
     &emsp;while (sessionAttributeNames.hasMoreElements()) {<br/>
     &emsp;&emsp;String key = sessionAttributeNames.nextElement();<br/>
@@ -162,9 +162,9 @@
     &emsp;}<br/>
     %><br/>
     <strong>Set session attributes:</strong><br/>
-    session.setAttribute("Qui", "Rosso"); &lt;% session.setAttribute("Qui", "Rosso");  %><br/>
-    session.setAttribute("Quo", "Blu"); &lt;% session.setAttribute("Quo", "Blu");  %><br/>
-    session.setAttribute("Qua", "Verde"); &lt;% session.setAttribute("Qua", "Verde");  %><br/>
+    session.setAttribute("Qui", "Rosso"); <\% session.setAttribute("Qui", "Rosso");  %><br/>
+    session.setAttribute("Quo", "Blu"); <\% session.setAttribute("Quo", "Blu");  %><br/>
+    session.setAttribute("Qua", "Verde"); <\% session.setAttribute("Qua", "Verde");  %><br/>
 </div>
 <div class="example code">
     session.getId() = <%= session.getId() %><br/>
