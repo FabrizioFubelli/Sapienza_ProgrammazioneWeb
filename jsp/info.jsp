@@ -27,8 +27,12 @@
 
 <h1>Default Java Server settings</h1>
 
-<a href="<%= response.encodeURL(request.getServletPath()) %>"><button><%= response.encodeURL(request.getServletPath()) %></button></a>
-
+<div class="example src">
+    <a href="<%= response.encodeURL(request.getServletPath()) %>"><button>&lt;%= response.encodeURL(request.getServletPath()) %></button></a>
+</div>
+<div class="example code">
+    <a href="<%= response.encodeURL(request.getServletPath()) %>"><button><%= response.encodeURL(request.getServletPath()) %></button></a>
+</div>
 
 <h3>Request Info:</h3>
 <div class="example src">
