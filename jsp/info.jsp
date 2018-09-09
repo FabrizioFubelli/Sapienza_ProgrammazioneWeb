@@ -39,11 +39,11 @@
     session.setAttribute("Qua", "Verde"); &lt;% session.setAttribute("Qua", "Verde");  %><br/>
     <strong>Session attributes:</strong><br/>
     &lt;%<br/>
-    &nbsp;Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
-    &nbsp;while (sessionAttributeNames.hasMoreElements()) {<br/>
-    &nbsp;&nbsp;String key = sessionAttributeNames.nextElement();<br/>
-    &nbsp;&nbsp;out.println(key + " => " + session.getAttribute(key) + "&lt;br/>");<br/>
-    &nbsp;}<br/>
+    &emsp;Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
+    &emsp;while (sessionAttributeNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;String key = sessionAttributeNames.nextElement();<br/>
+    &emsp;&emsp;out.println(key + " => " + session.getAttribute(key) + "&lt;br/>");<br/>
+    &emsp;}<br/>
     %><br>
 </div>
 <div class="example code">
