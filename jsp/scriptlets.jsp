@@ -11,12 +11,24 @@
 
 
 
-<h3>Actions:</h3>
+<h3>Scriplet:</h3>
 <div class="example src">
     &lt;% scriptlet source %><br/>
     &lt;%= expression %><br/>
     &lt;%! declatration %><br/>
     &lt;%-- comment %><br/>
+</div>
+<br/>
+
+<h3>Standard action:</h3>
+<div class="example src">
+    &lt;jsp:actionName attribute="value">body&lt;/jsp:dosomething><br/>
+</div>
+<br/>
+
+<h3>Custom tag:</h3>
+<div class="example src">
+    &lt;tagPrefix:tagName attribute="value">body&lt;/tagPrefix:tagName>
 </div>
 <br/>
 
