@@ -19,7 +19,7 @@
     <!-- Servlet definitions -->
     <servlet>
         <servlet-name>Paperino</servlet-name>
-        <description>Simple servet for GET requests</description>
+        <description>Simple servlet for GET requests</description>
         <servlet-class>PaperinoServlet</servlet-class>
     </servlet>
     <servlet>
