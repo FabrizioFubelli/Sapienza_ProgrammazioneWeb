@@ -14,6 +14,8 @@
     <style>
         div.example {
             padding: 10px;
+            min-width: 900px;
+            overflow: scroll;
         }
         div.example.src {
             background: #dfdfdf;
@@ -33,6 +35,8 @@
 <div class="example code">
     <a href="<%= response.encodeURL(request.getServletPath())+"?param1=test" %>"><button><%= response.encodeURL(request.getServletPath())+"?param1=test" %></button></a>
 </div>
+
+
 
 <h3>Request Info:</h3>
 <div class="example src">
@@ -161,8 +165,8 @@
 <div class="example src">
     session.getId() = &lt;%= session.getId() %><br/>
     session.isNew() = &lt;%= session.isNew() %><br/>
-    session.getMaxInactiveInterval() = &lt;%= session.getMaxInactiveInterval() %> (seconds)<br/>
-    session.setMaxInactiveInterval(7); &lt;% session.setMaxInactiveInterval(7); %><br/>
+    session.getMaxInactiveInterval() = &lt;%= session.getMaxInactiveInterval() %> // This session expire in <%= session.getMaxInactiveInterval() %> seconds of inactivity<br/>
+    session.setMaxInactiveInterval(7); &lt;% session.setMaxInactiveInterval(7); %> // This session will expire in 7 seconds of inactivity<br/>
     <strong>Get session attributes:</strong><br/>
     &lt;%<br/>
     &emsp;Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
@@ -179,8 +183,8 @@
 <div class="example code">
     session.getId() = <%= session.getId() %><br/>
     session.isNew() = <%= session.isNew() %><br/>
-    session.getMaxInactiveInterval() = <%= session.getMaxInactiveInterval() %> (seconds)<br/>
-    session.setMaxInactiveInterval(7); <% session.setMaxInactiveInterval(7); %><br/>
+    session.getMaxInactiveInterval() = <%= session.getMaxInactiveInterval() %> // This session expire in <%= session.getMaxInactiveInterval() %> seconds of inactivity<br/>
+    session.setMaxInactiveInterval(7); <% session.setMaxInactiveInterval(7); %> // This session will expire in 7 seconds of inactivity<br/>
     <strong>Get session attributes:</strong><br/>
     <%
         Enumeration<String> sessionAttributeNames = session.getAttributeNames();

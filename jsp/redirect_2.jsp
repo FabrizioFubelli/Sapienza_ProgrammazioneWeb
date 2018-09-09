@@ -7,6 +7,8 @@
     <style>
         div.example {
             padding: 10px;
+            min-width: 900px;
+            overflow: scroll;
         }
         div.example.src {
             background: #dfdfdf;
