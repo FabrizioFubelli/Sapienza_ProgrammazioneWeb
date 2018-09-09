@@ -58,7 +58,7 @@
     &emsp;&emsp;&emsp;&emsp;String name = initParameterNames.nextElement();<br/>
     &emsp;&emsp;&emsp;&emsp;out.print(name + " => "+servletContext.getInitParameter(name)+"&lt;br/>");<br/>
     &emsp;&emsp;}<br/>
-    %><br/><br/>
+    %><br/>
 
     <br/><strong>ServletContext attributes:</strong><br/>
     <\%<br/>
@@ -98,7 +98,7 @@
             String name = initParameterNames.nextElement();
             out.print(name + " => "+servletContext.getInitParameter(name)+"<br/>");
         }
-    %><br/>
+    %>
 
     <br/><strong>ServletContext attributes:</strong><br>
     <%
