@@ -1,7 +1,8 @@
 <%@ page import="java.util.Objects" %>
 <%@ page import="java.util.function.Consumer" %>
 <%@ page import="java.io.IOException" %>
-<%@ page import="java.util.Enumeration" %><%--
+<%@ page import="java.util.Enumeration" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: Fabrizio Fubelli
   Date: 9/9/18
@@ -28,6 +29,7 @@
 
 <h1>Default Java Server settings</h1>
 
+
 <h3>Session Info:</h3>
 <div class="example src">
     session.getId() = &lt;%= session.getId() %><br/>
@@ -44,7 +46,7 @@
     &emsp;&emsp;String key = sessionAttributeNames.nextElement();<br/>
     &emsp;&emsp;out.println(key + " => " + session.getAttribute(key) + "&lt;br/>");<br/>
     &emsp;}<br/>
-    %><br>
+    %><br/>
 </div>
 <div class="example code">
     session.getId() = <%= session.getId() %><br/>
@@ -64,6 +66,43 @@
     %>
 </div>
 <br/>
+
+
+<h3>Cookies Info:</h3>
+<div class="example src">
+    &lt;%<br>
+    &emsp;Cookie[] cookies = request.getCookies();<br/>
+    &emsp;for (Cookie cookie : cookies) {<br/>
+    &emsp;&emsp;out.println("&lt;strong>"+cookie.getName()+"&lt;/strong>&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getValue() = "+cookie.getValue()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getComment() = "+cookie.getComment()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getDomain() = "+cookie.getDomain()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getMaxAge() = "+cookie.getMaxAge()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getPath() = "+cookie.getPath()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getSecure() = "+cookie.getSecure()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.getVersion() = "+cookie.getVersion()+"&lt;br/>");<br/>
+    &emsp;&emsp;out.println("cookie.isHttpOnly() = "+cookie.isHttpOnly()+"&lt;br/>&lt;br/>");<br/>
+    &emsp;}<br/>
+    %><br/>
+</div>
+<div class="example code">
+    <%
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            out.println("<strong>"+cookie.getName()+"</strong><br/>");
+            out.println("cookie.getValue() = "+cookie.getValue()+"<br/>");
+            out.println("cookie.getComment() = "+cookie.getComment()+"<br/>");
+            out.println("cookie.getDomain() = "+cookie.getDomain()+"<br/>");
+            out.println("cookie.getMaxAge() = "+cookie.getMaxAge()+"<br/>");
+            out.println("cookie.getPath() = "+cookie.getPath()+"<br/>");
+            out.println("cookie.getSecure() = "+cookie.getSecure()+"<br/>");
+            out.println("cookie.getVersion() = "+cookie.getVersion()+"<br/>");
+            out.println("cookie.isHttpOnly() = "+cookie.isHttpOnly()+"<br/><br/>");
+        }
+    %>
+</div>
+<br/>
+
 
 </body>
 </html>
