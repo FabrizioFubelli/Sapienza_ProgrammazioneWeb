@@ -46,24 +46,25 @@
 <div class="example src">
     <\% int counter=0; %><br/>
     <\% counter++; %><br/>
-    counter vale: <\%= counter %>.<br>
-    <\%! int <strong>counter</strong>=0; %><br/>
+    counter = <\%= counter %>.<br>
+    <\%<strong>!</strong> int <strong>counter</strong>=0; %><br/>
     <\% counter++; %><br/>
-    Il contatore vale: <\%= counter %>.<br>
+    counter = <\%= counter %>.<br>
     <\% <strong>this.counter</strong>++; %><br/>
-    <strong>this.counter</strong> vale: <\%= this.counter %>.
+    <strong>this.counter</strong> = <\%= this.counter %>.
 </div>
 <div class="example code">
     <% int counter=0; %>
     <% counter++; %>
-    counter vale: <%= counter %>.<br>
-    <%! int counter=0; %>
+    counter = <%= counter %>.<br>
+    <%! private int counter=0; %>
     <% counter++; %>
-    counter vale: <%= counter %>.<br>
+    counter = <%= counter %>.<br>
     <% this.counter++; %>
-    <strong>this.counter</strong> vale: <%= this.counter %>.
+    <strong>this.counter</strong> = <%= this.counter %>.
 </div>
 <br/>
+
 
 
 <h3>Foreach Example:</h3>
