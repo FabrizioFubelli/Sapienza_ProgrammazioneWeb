@@ -11,7 +11,7 @@
 
 <h3>jsp:</h3>
 <p>
-    <a href="<%= response.encodeURL("/jsp/info.jsp") %>">/jsp/info.jsp</a>
+    <a href="<%= response.encodeURL("/jsp/info.jsp?param1=test") %>">/jsp/info.jsp</a>
     <br>
     <a href="<%= response.encodeURL("/jsp/cookies.jsp") %>">/jsp/cookies.jsp</a>
     <br>

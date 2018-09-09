@@ -25,60 +25,60 @@
 
 <h3>Foreach Example:</h3>
 <div class="example src">
-    &lt;% for (int i = 1; i <= 5; i++) { %><br>
-    &lt;%= i %>) Ciao Mondo!<br>
-    &lt;% } %><br>
+    &lt;% for (int i = 1; i <= 5; i++) { %><br/>
+    &lt;%= i %>) Ciao Mondo!<br/>
+    &lt;% } %><br/>
 </div>
 <div class="example code">
 <% for (int i = 1; i <= 5; i++) { %>
-<%= i %>) Ciao Mondo!<br>
+<%= i %>) Ciao Mondo!<br/>
 <% } %>
 </div>
-<br>
+<br/>
 
 
 <h3>Foreach Cookies Example:</h3>
 <div class="example src">
-    &lt;% if (!Objects.isNull(request.getCookies())) {<br>
-    &emsp;&emsp; for (Cookie cooky : request.getCookies()) { %><br>
-    &lt;%= &ensp; "cooky name: "+cooky.getName() %><br>
-    &lt;%= &ensp; "cooky value: "+cooky.getValue() %><br>
-    &lt;% &nbsp; } %><br>
-    &lt;% } %><br>
+    &lt;% if (!Objects.isNull(request.getCookies())) {<br/>
+    &emsp;&emsp; for (Cookie cooky : request.getCookies()) { %><br/>
+    &lt;%= &ensp; "cooky name: "+cooky.getName() %><br/>
+    &lt;%= &ensp; "cooky value: "+cooky.getValue() %><br/>
+    &lt;% &nbsp; } %><br/>
+    &lt;% } %><br/>
 </div>
 <div class="example code">
 <% if (!Objects.isNull(request.getCookies())) {
     for (Cookie cooky : request.getCookies()) { %>
-<%= "cooky name: "+cooky.getName() %><br>
-<%= "cooky value: "+cooky.getValue() %><br>
+<%= "cooky name: "+cooky.getName() %><br/>
+<%= "cooky value: "+cooky.getValue() %><br/>
 <%  } %>
 <% } %>
 </div>
-<br>
+<br/>
 
 
 <h3>Foreach Session Example:</h3>
 <div class="example src">
-    &lt;% if (!Objects.isNull(session)) {<br>
-    &emsp;&emsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br>
-    &emsp;&emsp; while (sessionAttributeNames.hasMoreElements()) {<br>
-    &emsp;&emsp;&emsp; String attrName = sessionAttributeNames.nextElement(); %><br>
-    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute name: "+attrName %><br>
-    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute value: "+session.getAttribute(attrName) %><br>
-    &lt;% &nbsp; } %><br>
-    &lt;% } %><br>
+    &lt;% if (!Objects.isNull(session)) {<br/>
+    &emsp;&emsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
+    &emsp;&emsp; while (sessionAttributeNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;&emsp; String attrName = sessionAttributeNames.nextElement(); %><br/>
+    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute name: "+attrName %><br/>
+    &lt;%= &nbsp;&nbsp;&nbsp; "session-attribute value: "+session.getAttribute(attrName) %><br/>
+    &lt;% &nbsp; } %><br/>
+    &lt;% } %><br/>
 </div>
 <div class="example code">
 <% if (!Objects.isNull(session)) {
     Enumeration<String> sessionAttributeNames = session.getAttributeNames();
     while (sessionAttributeNames.hasMoreElements()) {
         String attrName = sessionAttributeNames.nextElement(); %>
-<%=     "session-attribute name: "+attrName %><br>
-<%=     "session-attribute value: "+session.getAttribute(attrName) %><br>
+<%=     "session-attribute name: "+attrName %><br/>
+<%=     "session-attribute value: "+session.getAttribute(attrName) %><br/>
 <%  } %>
 <% } %>
 </div>
-<br>
+<br/>
 
 
 </body>

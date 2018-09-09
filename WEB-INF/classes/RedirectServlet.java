@@ -35,7 +35,7 @@ public class RedirectServlet extends HttpServlet {
         // With forward, the "Included jsp: /jsp/redirect_2.jsp" text will not write
         //request.getRequestDispatcher("/jsp/redirect_2.jsp").forward(request, response);
 
-        out.println("\nIncluded jsp: /jsp/redirect_2.jsp");
+        out.println("<hr/>Included jsp: <a href=\"/jsp/redirect_2.jsp\">/jsp/redirect_2.jsp</a> by Servlet <a href=\"/servlet/Redirect\">RedirectServlet</a>");
         out.close();
     }
 }
