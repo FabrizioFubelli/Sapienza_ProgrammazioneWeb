@@ -1,8 +1,5 @@
-<%@ page import="java.util.Objects" %>
-<%@ page import="java.util.function.Consumer" %>
-<%@ page import="java.io.IOException" %>
 <%@ page import="java.util.Enumeration" %>
-<%@ page import="java.util.Map" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Fabrizio Fubelli
   Date: 9/9/18
@@ -28,6 +25,48 @@
 <body>
 
 <h1>Default Java Server settings</h1>
+<a href="<%= response.encodeURL(request.getServletPath()) %>"><button>Reload</button></a>
+
+<h3>Request Info:</h3>
+<div class="example src">
+    request.getMethod() = &lt;%= request.getMethod() %><br/>
+    request.getPathInfo() = &lt;%= request.getPathInfo() %><br/>
+    request.getRequestURI() = &lt;%= request.getRequestURI() %><br/>
+    request.getRequestURL().toString() = &lt;%= request.getRequestURL().toString() %><br/>
+    request.getServletPath() = &lt;%= request.getServletPath() %><br/>
+    request.isRequestedSessionIdFromURL() = &lt;%= request.isRequestedSessionIdFromURL() %><br/>
+    request.isRequestedSessionIdFromCookie() = &lt;%= request.isRequestedSessionIdFromCookie() %><br/>
+    request.isRequestedSessionIdValid() = &lt;%= request.isRequestedSessionIdValid() %><br/>
+    request.getAuthType() = &lt;%= request.getAuthType() %><br/>
+    <strong>Request headers:</strong><br/>
+    &lt;%<br/>
+    &emsp;Enumeration&lt;String> requestHeaderNames = request.getHeaderNames();<br/>
+    &emsp;while (requestHeaderNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;String key = requestHeaderNames.nextElement();<br/>
+    &emsp;&emsp;out.println(key + " => " + request.getHeader(key) + "&lt;br/>");<br/>
+    &emsp;}<br/>
+    %><br/>
+</div>
+<div class="example code">
+    request.getMethod() = <%= request.getMethod() %><br/>
+    request.getPathInfo() = <%= request.getPathInfo() %><br/>
+    request.getRequestURI() = <%= request.getRequestURI() %><br/>
+    request.getRequestURL().toString() = <%= request.getRequestURL().toString() %><br/>
+    request.getServletPath() = <%= request.getServletPath() %><br/>
+    request.isRequestedSessionIdFromURL() = <%= request.isRequestedSessionIdFromURL() %><br/>
+    request.isRequestedSessionIdFromCookie() = <%= request.isRequestedSessionIdFromCookie() %><br/>
+    request.isRequestedSessionIdValid() = <%= request.isRequestedSessionIdValid() %><br/>
+    request.getAuthType() = <%= request.getAuthType() %><br/>
+    <strong>Request headers:</strong><br/>
+    <%
+        Enumeration<String> requestHeaderNames = request.getHeaderNames();
+        while (requestHeaderNames.hasMoreElements()) {
+            String key = requestHeaderNames.nextElement();
+            out.println(key + " => " + request.getHeader(key) + "<br/>");
+        }
+    %>
+</div>
+<br/>
 
 
 <h3>Session Info:</h3>
@@ -72,32 +111,36 @@
 <div class="example src">
     &lt;%<br>
     &emsp;Cookie[] cookies = request.getCookies();<br/>
-    &emsp;for (Cookie cookie : cookies) {<br/>
-    &emsp;&emsp;out.println("&lt;strong>"+cookie.getName()+"&lt;/strong>&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getValue() = "+cookie.getValue()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getComment() = "+cookie.getComment()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getDomain() = "+cookie.getDomain()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getMaxAge() = "+cookie.getMaxAge()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getPath() = "+cookie.getPath()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getSecure() = "+cookie.getSecure()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.getVersion() = "+cookie.getVersion()+"&lt;br/>");<br/>
-    &emsp;&emsp;out.println("cookie.isHttpOnly() = "+cookie.isHttpOnly()+"&lt;br/>&lt;br/>");<br/>
+    &emsp;if (cookie != null) {<br/>
+    &emsp;&emsp;for (Cookie cookie : cookies) {<br/>
+    &emsp;&emsp;&emsp;out.println("&lt;strong>"+cookie.getName()+"&lt;/strong>&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getValue() = "+cookie.getValue()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getComment() = "+cookie.getComment()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getDomain() = "+cookie.getDomain()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getMaxAge() = "+cookie.getMaxAge()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getPath() = "+cookie.getPath()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getSecure() = "+cookie.getSecure()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.getVersion() = "+cookie.getVersion()+"&lt;br/>");<br/>
+    &emsp;&emsp;&emsp;out.println("cookie.isHttpOnly() = "+cookie.isHttpOnly()+"&lt;br/>&lt;br/>");<br/>
+    &emsp;&emsp;}<br/>
     &emsp;}<br/>
     %><br/>
 </div>
 <div class="example code">
     <%
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            out.println("<strong>"+cookie.getName()+"</strong><br/>");
-            out.println("cookie.getValue() = "+cookie.getValue()+"<br/>");
-            out.println("cookie.getComment() = "+cookie.getComment()+"<br/>");
-            out.println("cookie.getDomain() = "+cookie.getDomain()+"<br/>");
-            out.println("cookie.getMaxAge() = "+cookie.getMaxAge()+"<br/>");
-            out.println("cookie.getPath() = "+cookie.getPath()+"<br/>");
-            out.println("cookie.getSecure() = "+cookie.getSecure()+"<br/>");
-            out.println("cookie.getVersion() = "+cookie.getVersion()+"<br/>");
-            out.println("cookie.isHttpOnly() = "+cookie.isHttpOnly()+"<br/><br/>");
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                out.println("<strong>" + cookie.getName() + "</strong><br/>");
+                out.println("cookie.getValue() = " + cookie.getValue() + "<br/>");
+                out.println("cookie.getComment() = " + cookie.getComment() + "<br/>");
+                out.println("cookie.getDomain() = " + cookie.getDomain() + "<br/>");
+                out.println("cookie.getMaxAge() = " + cookie.getMaxAge() + "<br/>");
+                out.println("cookie.getPath() = " + cookie.getPath() + "<br/>");
+                out.println("cookie.getSecure() = " + cookie.getSecure() + "<br/>");
+                out.println("cookie.getVersion() = " + cookie.getVersion() + "<br/>");
+                out.println("cookie.isHttpOnly() = " + cookie.isHttpOnly() + "<br/><br/>");
+            }
         }
     %>
 </div>
