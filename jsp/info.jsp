@@ -33,18 +33,41 @@
     &emsp;&emsp;HttpJspPage jspPage = (HttpJspPage) page; %><br/>
     &emsp;&emsp;ServletConfig servletConfig = jspPage.getServletConfig(); %><br/>
     &emsp;&emsp;ServletContext servletContext = servletConfig.getServletContext(); %><br/>
+
     %><br>
     jspPage.getServletInfo() = <\%= jspPage.getServletInfo() %><br/>
     servletConfig.getServletName() = <\%= servletConfig.getServletName() %><br/>
-    <br/><strong>Init Parameters:</strong><br/>
+    <br/><strong>ServletConfig init Parameters:</strong><br/>
     <\%<br/>
+
     &emsp;&emsp;Enumeration&lt;String> initParameterNames = servletConfig.getInitParameterNames();<br/>
     &emsp;&emsp;while (initParameterNames.hasMoreElements()) {<br/>
     &emsp;&emsp;&emsp;&emsp;String name = initParameterNames.nextElement();<br/>
     &emsp;&emsp;&emsp;&emsp;out.print(name + " => "+servletConfig.getInitParameter(name)+"&lt;br/>");<br/>
     &emsp;&emsp;}<br/>
     %><br/><br/>
+
     servletContext.getServerInfo() = <\%= servletContext.getServerInfo() %><br/>
+    servletContext.getContextPath() = <\%= servletContext.getContextPath() %><br/>
+    servletContext.getServletContextName() = <\%= servletContext.getServletContextName() %><br/>
+
+    <br/><strong>ServletContext init Parameters:</strong><br/>
+    <\%<br/>
+    &emsp;&emsp;initParameterNames = servletContext.getInitParameterNames();<br/>
+    &emsp;&emsp;while (initParameterNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;&emsp;&emsp;String name = initParameterNames.nextElement();<br/>
+    &emsp;&emsp;&emsp;&emsp;out.print(name + " => "+servletContext.getInitParameter(name)+"&lt;br/>");<br/>
+    &emsp;&emsp;}<br/>
+    %><br/><br/>
+
+    <br/><strong>ServletContext attributes:</strong><br/>
+    <\%<br/>
+    &emsp;&emsp;Enumeration&lt;String> attributeNames = servletContext.getAttributeNames();<br/>
+    &emsp;&emsp;while (attributeNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;&emsp;&emsp;String name = attributeNames.nextElement();<br/>
+    &emsp;&emsp;&emsp;&emsp;out.print(name + " => "+servletContext.getAttribute(name)+"&lt;br/>");<br/>
+    &emsp;&emsp;}<br/>
+    %><br/><br/>
 </div>
 <div class="example code">
     <%
@@ -53,8 +76,9 @@
         ServletContext servletContext = servletConfig.getServletContext();
     %>
     jspPage.getServletInfo() = <%= jspPage.getServletInfo() %><br/>
+
     servletConfig.getServletName() = <%= servletConfig.getServletName() %><br/>
-    <br/><strong>Init Parameters:</strong><br>
+    <br/><strong>ServletConfig init Parameters:</strong><br>
     <%
         Enumeration<String> initParameterNames = servletConfig.getInitParameterNames();
         while (initParameterNames.hasMoreElements()) {
@@ -62,7 +86,28 @@
             out.print(name + " => "+servletConfig.getInitParameter(name)+"<br/>");
         }
     %><br/>
+
     servletContext.getServerInfo() = <%= servletContext.getServerInfo() %><br/>
+    servletContext.getContextPath() = <%= servletContext.getContextPath() %><br/>
+    servletContext.getServletContextName() = <%= servletContext.getServletContextName() %><br/>
+
+    <br/><strong>ServletContext init Parameters:</strong><br>
+    <%
+        initParameterNames = servletContext.getInitParameterNames();
+        while (initParameterNames.hasMoreElements()) {
+            String name = initParameterNames.nextElement();
+            out.print(name + " => "+servletContext.getInitParameter(name)+"<br/>");
+        }
+    %><br/>
+
+    <br/><strong>ServletContext attributes:</strong><br>
+    <%
+        Enumeration<String> attributeNames = servletContext.getAttributeNames();
+        while (attributeNames.hasMoreElements()) {
+            String name = attributeNames.nextElement();
+            out.print(name + " => "+servletContext.getAttribute(name)+"<br/>");
+        }
+    %><br/>
 </div>
 <br/>
 
