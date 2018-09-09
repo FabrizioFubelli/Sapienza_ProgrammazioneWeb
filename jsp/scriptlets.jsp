@@ -1,6 +1,4 @@
-<%@ page import="java.util.Objects" %>
-<%@ page import="java.util.Enumeration" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.Objects, java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +8,17 @@
 </head>
 <body bgcolor="white">
 <h1>Scriptlets JSP</h1>
+
+
+
+<h3>Actions:</h3>
+<div class="example src">
+    &lt;% scriptlet source %><br/>
+    &lt;%= expression %><br/>
+    &lt;%! declatration %><br/>
+    &lt;%-- comment %><br/>
+</div>
+<br/>
 
 
 
@@ -29,16 +38,18 @@
 
 <h3>Foreach Cookies Example:</h3>
 <div class="example src">
-    &lt;% if (!Objects.isNull(request.getCookies())) {<br/>
-    &emsp;&emsp; for (Cookie cooky : request.getCookies()) { %><br/>
+    &lt;% Cookie cookies[] = request.getCookies(); <br/>
+    &emsp;&ensp; if (!Objects.isNull(cookies)) {<br/>
+    &emsp;&emsp; for (Cookie cooky : cookies) { %><br/>
     &lt;%= &ensp; "cooky name: "+cooky.getName() %><br/>
     &lt;%= &ensp; "cooky value: "+cooky.getValue() %><br/>
     &lt;% &nbsp; } %><br/>
     &lt;% } %><br/>
 </div>
 <div class="example code">
-<% if (!Objects.isNull(request.getCookies())) {
-    for (Cookie cooky : request.getCookies()) { %>
+<% Cookie cookies[] = request.getCookies();
+   if (!Objects.isNull(cookies)) {
+    for (Cookie cooky : cookies) { %>
 <%= "cooky name: "+cooky.getName() %><br/>
 <%= "cooky value: "+cooky.getValue() %><br/>
 <%  } %>

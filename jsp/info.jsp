@@ -1,12 +1,10 @@
-<%@ page import="java.util.Enumeration" %>
-<%@ page import="java.util.Collection" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fabrizio Fubelli
   Date: 9/9/18
   Time: 1:24 PM
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.Enumeration" %>
 <html>
 <head>
     <meta charset="UTF-8" />
