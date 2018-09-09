@@ -10,13 +10,21 @@
 <h1>Scriptlets JSP</h1>
 
 
+<h3>Directives:</h3>
+<div class="example src">
+    <div>
+        &lt;%@ page language="java" import= "..." %><br/>
+        &lt;%@ include file="relativeURLspec" %><br/>
+    </div>
+</div>
+<br/>
 
 <h3>Scriplet:</h3>
 <div class="example src">
     &lt;% scriptlet source %><br/>
     &lt;%= expression %><br/>
     &lt;%! declatration %><br/>
-    &lt;%-- comment %><br/>
+    &lt;%-- comment --%><br/>
 </div>
 <br/>
 
