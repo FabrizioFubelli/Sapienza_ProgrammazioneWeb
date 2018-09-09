@@ -30,10 +30,9 @@
 <h3>Implicit objects:</h3>
 <div class="example src">
     <\%<br>
-    &emsp;&emsp;HttpJspPage jspPage = (HttpJspPage) page; %><br/>
-    &emsp;&emsp;ServletConfig servletConfig = jspPage.getServletConfig(); %><br/>
-    &emsp;&emsp;ServletContext servletContext = servletConfig.getServletContext(); %> // == application<br/>
-
+    &emsp;&emsp;HttpJspPage jspPage = (HttpJspPage) page;<br/>
+    &emsp;&emsp;ServletConfig servletConfig = config; // == jspPage.getServletConfig();<br/>
+    &emsp;&emsp;ServletContext servletContext = application; // == servletConfig.getServletContext();<br/>
     %><br>
     jspPage.getServletInfo() = <\%= jspPage.getServletInfo() %><br/>
     servletConfig.getServletName() = <\%= servletConfig.getServletName() %><br/>
@@ -72,8 +71,8 @@
 <div class="example code">
     <%
         HttpJspPage jspPage = (HttpJspPage) page;
-        ServletConfig servletConfig = jspPage.getServletConfig();
-        ServletContext servletContext = servletConfig.getServletContext();  // == application
+        ServletConfig servletConfig = config; // == jspPage.getServletConfig();
+        ServletContext servletContext = application; // == servletConfig.getServletContext();
     %>
     jspPage.getServletInfo() = <%= jspPage.getServletInfo() %><br/>
 
