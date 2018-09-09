@@ -19,11 +19,12 @@
     <!-- Servlet definitions -->
     <servlet>
         <servlet-name>Paperino</servlet-name>
-        <description>Una servlet che gestisce le richieste di GET</description>
+        <description>Simple servet for GET requests</description>
         <servlet-class>PaperinoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RedirectServlet</servlet-name>
+        <description>Redirecting to static Web pages and other servlets</description>
         <servlet-class>RedirectServlet</servlet-class>
     </servlet>
     <servlet>
