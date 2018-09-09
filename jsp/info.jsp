@@ -32,7 +32,7 @@
     <\%<br>
     &emsp;&emsp;HttpJspPage jspPage = (HttpJspPage) page; %><br/>
     &emsp;&emsp;ServletConfig servletConfig = jspPage.getServletConfig(); %><br/>
-    &emsp;&emsp;ServletContext servletContext = servletConfig.getServletContext(); %><br/>
+    &emsp;&emsp;ServletContext servletContext = servletConfig.getServletContext(); %> // == application<br/>
 
     %><br>
     jspPage.getServletInfo() = <\%= jspPage.getServletInfo() %><br/>
@@ -73,7 +73,7 @@
     <%
         HttpJspPage jspPage = (HttpJspPage) page;
         ServletConfig servletConfig = jspPage.getServletConfig();
-        ServletContext servletContext = servletConfig.getServletContext();
+        ServletContext servletContext = servletConfig.getServletContext();  // == application
     %>
     jspPage.getServletInfo() = <%= jspPage.getServletInfo() %><br/>
 
