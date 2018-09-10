@@ -70,6 +70,7 @@
         <web-resource-collection> <!-- risorse protette -->
             <web-resource-name>Una pagina protetta </web-resource-name>
             <url-pattern>/</url-pattern>
+            <url-pattern>/jsp/info.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint><!-- ruoli associati alle risorse -->
             <role-name>tomcat</role-name>
