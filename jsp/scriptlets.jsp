@@ -60,7 +60,7 @@
     &emsp;&emsp;&emsp;&lt;jsp:param name="date" value="<\%= new java.util.Date() %>" /><br/>
     &emsp;&emsp;&lt;jsp:forward><br/>
     <\%<br/>
-    } else {<br/>
+    &emsp;} else {<br/>
     %><br/>
     &emsp;&emsp;&lt;form action = "scriptlets.jsp" method = "get"><br/>
     &emsp;&emsp;&emsp;&lt;p>Type your first name and press Submit&lt;/p><br/>
@@ -70,7 +70,7 @@
     &emsp;&emsp;&emsp;&lt;/p><br/>
     &emsp;&emsp;&lt;/form><br/>
     <\%<br/>
-        }<br/>
+    &emsp;}<br/>
     %><br/>
 </div>
 <div class="example code">
@@ -102,6 +102,22 @@
 <h3>Standard action (<i>jsp:useBean</i>):</h3>
 <div class="example src">
     &lt;jsp:useBean id="nipotino" class="beans.NipotinoBean" scope="application"/><br/>
+    <br/>
+    <\%<br/>
+    &emsp;Enumeration&lt;String> parameterNames = request.getParameterNames();<br/>
+    &emsp;List&lt;String> acceptedParams = Arrays.asList("qui", "quo", "qua");<br/>
+    &emsp;while (parameterNames.hasMoreElements()) {<br/>
+    &emsp;&emsp;String key = parameterNames.nextElement();<br/>
+    &emsp;&emsp;if (acceptedParams.contains(key)) {<br/>
+    %><br/>
+    &emsp;&emsp;&emsp;&lt;jsp:setProperty name="nipotino" property="name" value="<\%= key %>"/> <\%-- name="id bean" --%><br/>
+    &emsp;&emsp;&emsp;&lt;jsp:setProperty name="nipotino" property="color" value="<\%= request.getParameter(key) %>"/><br/>
+    <\%<br/>
+    &emsp;&emsp;}<br/>
+    &emsp;}<br/>
+    %><br/>
+    <br/>
+    &lt;jsp:getProperty name="nipotino" property="name"/> => &lt;jsp:getProperty name="nipotino" property="color"/>
 </div>
 <div class="example code">
     <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" /><br/>
@@ -113,7 +129,7 @@
             String key = parameterNames.nextElement();
             if (acceptedParams.contains(key)) {
     %>
-                <jsp:setProperty name="nipotino" property="name" value="<%= key %>"/> <!-- name="id bean" -->
+                <jsp:setProperty name="nipotino" property="name" value="<%= key %>"/> <%-- name="id bean" --%>
                 <jsp:setProperty name="nipotino" property="color" value="<%= request.getParameter(key) %>"/>
     <%
             }
