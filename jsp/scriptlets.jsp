@@ -112,8 +112,7 @@
     &emsp;&emsp; Enumeration&lt;String> sessionAttributeNames = session.getAttributeNames();<br/>
     &emsp;&emsp; while (sessionAttributeNames.hasMoreElements()) {<br/>
     &emsp;&emsp;&emsp; String attrName = sessionAttributeNames.nextElement(); %><br/>
-    <\%= &nbsp;&nbsp;&nbsp; "session-attribute name: "+attrName %><br/>
-    <\%= &nbsp;&nbsp;&nbsp; "session-attribute value: "+session.getAttribute(attrName) %><br/>
+    <\%= &nbsp;&nbsp;&nbsp; attrName + " => " + session.getAttribute(attrName) %><br/>
     <\% &nbsp; } %><br/>
     <\% } %><br/>
 </div>
@@ -122,8 +121,7 @@
     Enumeration<String> sessionAttributeNames = session.getAttributeNames();
     while (sessionAttributeNames.hasMoreElements()) {
         String attrName = sessionAttributeNames.nextElement(); %>
-<%=     "session-attribute name: "+attrName %><br/>
-<%=     "session-attribute value: "+session.getAttribute(attrName) %><br/>
+<%=     attrName + " => "+session.getAttribute(attrName) %><br/>
 <%  } %>
 <% } %>
 </div>
