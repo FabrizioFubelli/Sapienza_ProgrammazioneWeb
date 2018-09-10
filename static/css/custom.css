@@ -3,6 +3,23 @@ div.example {
     overflow: auto;
     max-width: 100%;
 }
+div.example.include {
+    display: flex;
+}
+div.example.include > div {
+    display: flex;
+    margin: auto;
+    background: darkblue;
+    color: white;
+    font-weight: bold;
+    font-size: 21px;
+    height: 25px;
+    width: 310px;
+    min-width: 310px;
+}
+div.example.include > div > strong {
+    margin: auto;
+}
 div.example > div {
     min-width: 900px;
 }
