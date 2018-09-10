@@ -11,8 +11,7 @@ div.example.include > div {
     margin: auto;
     background: darkblue;
     color: white;
-    font-weight: bold;
-    font-size: 21px;
+    font-size: 16px;
     height: 25px;
     width: 310px;
     min-width: 310px;

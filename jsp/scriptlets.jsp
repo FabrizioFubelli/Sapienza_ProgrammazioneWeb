@@ -31,9 +31,13 @@
 <h3>Standard action:</h3>
 <div class="example src">
     &lt;jsp:include file="<a href="scriptlets/include.jsp">scriptlets/include.jsp</a>">%><br/>
+    &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
 </div>
 <div class="example include code">
     <jsp:include page="scriptlets/include.jsp"/><br/>
+</div>
+<div class="example include code">
+    <jsp:include page="../html/scriptlets/include.html"/><br/>
 </div>
 <br/>
 

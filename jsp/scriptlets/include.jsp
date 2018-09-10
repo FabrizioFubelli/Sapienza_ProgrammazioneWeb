@@ -1,3 +1,3 @@
 <div>
-    <strong>THIS CONTENT IS INCLUDED</strong>
+    <strong>(JSP) THIS CONTENT IS INCLUDED</strong>
 </div>
