@@ -18,7 +18,7 @@
 
     <!-- Servlet definitions -->
     <servlet>
-        <servlet-name>Paperino</servlet-name>
+        <servlet-name>PaperinoServlet</servlet-name>
         <description>Simple servlet for GET requests</description>
         <servlet-class>PaperinoServlet</servlet-class>
     </servlet>
@@ -34,7 +34,7 @@
 
     <!-- Servlet mappings -->
     <servlet-mapping>
-        <servlet-name>Paperino</servlet-name>
+        <servlet-name>PaperinoServlet</servlet-name>
         <url-pattern>/servlet/Paperino</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
