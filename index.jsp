@@ -15,7 +15,7 @@
     <br>
     <a href="<%= response.encodeURL("/jsp/cookies.jsp") %>">/jsp/cookies.jsp</a>
     <br>
-    <a href="<%= response.encodeURL("/jsp/scriptlets.jsp") %>">/jsp/scriptlets.jsp</a>
+    <a href="<%= response.encodeURL("/jsp/scriptlets.jsp?qui=red") %>">/jsp/scriptlets.jsp</a>
     <br>
     <a href="<%= response.encodeURL("/jsp/redirect_1.jsp") %>">/jsp/redirect_1.jsp</a>
     <br>
