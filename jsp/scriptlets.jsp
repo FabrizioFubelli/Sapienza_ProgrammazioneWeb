@@ -28,7 +28,7 @@
 </div>
 <br/>
 
-<h3>Standard action:</h3>
+<h3>Standard action (<i>jsp:include</i>):</h3>
 <div class="example src">
     &lt;jsp:include file="<a href="scriptlets/include.jsp">scriptlets/include.jsp</a>">%><br/>
     &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
@@ -40,6 +40,57 @@
     <jsp:include page="../html/scriptlets/include.html"/><br/>
 </div>
 <br/>
+
+
+
+<h3>Standard action (<i>jsp:forward</i>):</h3>
+<div class="example src">
+    <\%<br/>
+    &emsp;String name = request.getParameter( "firstName" );<br/>
+    &emsp;if ( name != null ) {<br/>
+    %><br/>
+    &emsp;&emsp;&lt;jsp:forward page="<a href="scriptlets/forward.jsp">scriptlets/forward.jsp</a>"><br/>
+    &emsp;&emsp;&emsp;&lt;jsp:param name="date" value="<\%= new java.util.Date() %>" /><br/>
+    &emsp;&emsp;&lt;jsp:forward><br/>
+    <\%<br/>
+    } else {<br/>
+    %><br/>
+    &emsp;&emsp;&lt;form action = "scriptlets.jsp" method = "get"><br/>
+    &emsp;&emsp;&emsp;&lt;p>Type your first name and press Submit&lt;/p><br/>
+    &emsp;&emsp;&emsp;&lt;p><br/>
+    &emsp;&emsp;&emsp;&emsp;&lt;input type = "text" name = "firstName" title="firstName" /><br/>
+    &emsp;&emsp;&emsp;&emsp;&lt;input type = "submit" value = "Submit" /><br/>
+    &emsp;&emsp;&emsp;&lt;/p><br/>
+    &emsp;&emsp;&lt;/form><br/>
+    <\%<br/>
+        }<br/>
+    %><br/>
+</div>
+<div class="example code">
+    <%
+        String name = request.getParameter( "firstName" );
+        if ( name != null ) {
+    %>
+    <jsp:forward page="scriptlets/forward.jsp">
+        <jsp:param name="date" value="<%= new java.util.Date() %>"/>
+    </jsp:forward>
+    <%
+    } else {
+    %>
+    <form action = "scriptlets.jsp" method = "get">
+        <p>Type your first name and press Submit</p>
+        <p>
+            <input type = "text" name = "firstName" title="firstName" />
+            <input type = "submit" value = "Submit" />
+        </p>
+    </form>
+    <%
+        }
+    %>
+</div>
+<br/>
+
+
 
 <h3>Custom tag:</h3>
 <div class="example src">
@@ -81,9 +132,9 @@
     <\% } %><br/>
 </div>
 <div class="example code">
-<% for (int i = 1; i <= 5; i++) { %>
-<%= i %>) Ciao Mondo!<br/>
-<% } %>
+    <% for (int i = 1; i <= 5; i++) { %>
+    <%= i %>) Ciao Mondo!<br/>
+    <% } %>
 </div>
 <br/>
 
@@ -99,13 +150,13 @@
     <\% } %><br/>
 </div>
 <div class="example code">
-<% Cookie cookies[] = request.getCookies();
-   if (!Objects.isNull(cookies)) {
-    for (Cookie cooky : cookies) { %>
-<%= "cooky name: "+cooky.getName() %><br/>
-<%= "cooky value: "+cooky.getValue() %><br/>
-<%  } %>
-<% } %>
+    <% Cookie cookies[] = request.getCookies();
+        if (!Objects.isNull(cookies)) {
+            for (Cookie cooky : cookies) { %>
+    <%= "cooky name: "+cooky.getName() %><br/>
+    <%= "cooky value: "+cooky.getValue() %><br/>
+    <%  } %>
+    <% } %>
 </div>
 <br/>
 
@@ -121,13 +172,13 @@
     <\% } %><br/>
 </div>
 <div class="example code">
-<% if (!Objects.isNull(session)) {
-    Enumeration<String> sessionAttributeNames = session.getAttributeNames();
-    while (sessionAttributeNames.hasMoreElements()) {
-        String attrName = sessionAttributeNames.nextElement(); %>
-<%=     attrName + " => "+session.getAttribute(attrName) %><br/>
-<%  } %>
-<% } %>
+    <% if (!Objects.isNull(session)) {
+        Enumeration<String> sessionAttributeNames = session.getAttributeNames();
+        while (sessionAttributeNames.hasMoreElements()) {
+            String attrName = sessionAttributeNames.nextElement(); %>
+    <%=     attrName + " => "+session.getAttribute(attrName) %><br/>
+    <%  } %>
+    <% } %>
 </div>
 <br/>
 
