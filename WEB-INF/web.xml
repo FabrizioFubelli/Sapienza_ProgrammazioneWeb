@@ -64,4 +64,22 @@
         <url-pattern>/jsp-include</url-pattern>
     </servlet-mapping>
 
+
+
+    <security-constraint>
+        <web-resource-collection> <!-- risorse protette -->
+            <web-resource-name>Una pagina protetta </web-resource-name>
+            <url-pattern>/</url-pattern>
+        </web-resource-collection>
+        <auth-constraint><!-- ruoli associati alle risorse -->
+            <role-name>tomcat</role-name>
+            <role-name>role1</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Esempio di autenticazione Basic </realm-name>
+    </login-config>
+
 </web-app>
