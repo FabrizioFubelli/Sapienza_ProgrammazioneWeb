@@ -120,7 +120,7 @@
     &lt;jsp:getProperty name="nipotino" property="name"/> => &lt;jsp:getProperty name="nipotino" property="color"/>
 </div>
 <div class="example code">
-    <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" /><br/>
+    <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" />
 
     <%
         Enumeration<String> parameterNames = request.getParameterNames();
