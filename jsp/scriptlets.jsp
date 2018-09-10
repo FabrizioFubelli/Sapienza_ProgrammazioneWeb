@@ -10,6 +10,7 @@
 <h1>Scriptlets JSP</h1>
 
 
+
 <h3>Directives:</h3>
 <div class="example src">
     <div>
@@ -19,6 +20,8 @@
 </div>
 <br/>
 
+
+
 <h3>Scriplet:</h3>
 <div class="example src">
     <\% scriptlet source %><br/>
@@ -27,6 +30,8 @@
     <\%-- comment --%><br/>
 </div>
 <br/>
+
+
 
 <h3>Standard action (<i>jsp:include</i>):</h3>
 <div class="example src">
@@ -92,6 +97,21 @@
 
 
 
+<h3>Standard action (<i>jsp:useBean</i>):</h3>
+<div class="example src">
+    &lt;jsp:include file="<a href="scriptlets/include.jsp">scriptlets/include.jsp</a>">%><br/>
+    &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
+</div>
+<div class="example include code">
+    <jsp:include page="scriptlets/include.jsp"/><br/>
+</div>
+<div class="example include code">
+    <jsp:include page="../html/scriptlets/include.html"/><br/>
+</div>
+<br/>
+
+
+
 <h3>Custom tag:</h3>
 <div class="example src">
     &lt;tagPrefix:tagName attribute="value">body&lt;/tagPrefix:tagName>
@@ -139,6 +159,7 @@
 <br/>
 
 
+
 <h3>Foreach Cookies Example:</h3>
 <div class="example src">
     <\% Cookie cookies[] = request.getCookies(); <br/>
@@ -161,6 +182,7 @@
 <br/>
 
 
+
 <h3>Foreach Session Example:</h3>
 <div class="example src">
     <\% if (!Objects.isNull(session)) {<br/>
@@ -181,6 +203,7 @@
     <% } %>
 </div>
 <br/>
+
 
 
 </body>
