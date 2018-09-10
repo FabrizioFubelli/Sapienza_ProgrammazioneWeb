@@ -99,14 +99,19 @@
 
 <h3>Standard action (<i>jsp:useBean</i>):</h3>
 <div class="example src">
-    &lt;jsp:include file="<a href="scriptlets/include.jsp">scriptlets/include.jsp</a>">%><br/>
-    &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
+    &lt;jsp:useBean id="nipotino" class="beans.NipotinoBean" scope="application"/><br/>
 </div>
 <div class="example include code">
-    <jsp:include page="scriptlets/include.jsp"/><br/>
-</div>
-<div class="example include code">
-    <jsp:include page="../html/scriptlets/include.html"/><br/>
+    <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" /><br/>
+    <%
+        if (request.getParameter("qui") != null) {
+    %>
+        <jsp:setProperty name="nipotino" property="name" value="Qui"/> <!-- name="id bean" -->
+        <jsp:setProperty name="nipotino" property="color" param="qui"/>
+    <%
+        }
+    %>
+    <jsp:getProperty name="nipotino" property="name"/> => <jsp:getProperty name="nipotino" property="color"/>
 </div>
 <br/>
 
