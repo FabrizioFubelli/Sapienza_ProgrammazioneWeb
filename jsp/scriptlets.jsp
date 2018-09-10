@@ -103,7 +103,7 @@
 <div class="example src">
     &lt;jsp:useBean id="nipotino" class="beans.NipotinoBean" scope="application"/><br/>
 </div>
-<div class="example include code">
+<div class="example code">
     <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" /><br/>
 
     <%
