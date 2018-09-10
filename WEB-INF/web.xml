@@ -83,4 +83,11 @@
         <realm-name>Esempio di autenticazione Basic </realm-name>
     </login-config>
 
+    <!--login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/jsp/auth/login.jsp</form-login-page>
+            <form-error-page>/jsp/auth/error.jsp</form-error-page>
+        </form-login-config>
+    </login-config-->
 </web-app>
