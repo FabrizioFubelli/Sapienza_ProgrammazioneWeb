@@ -28,3 +28,6 @@ div.example.src {
 div.example.code {
     background: #c3dfaf;
 }
+span.comment {
+    color: grey !important;
+}

@@ -1,3 +1,4 @@
+<%--suppress XmlPathReference --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.function.BiConsumer" %>
 <%@ page import="java.util.*" %>
@@ -37,11 +38,11 @@
 
 <h3>Standard action (<i>jsp:include</i>):</h3>
 <div class="example src">
-    &lt;jsp:include file="<a href="scriptlets/include.jsp">scriptlets/include.jsp</a>">%><br/>
+    &lt;jsp:include file="<a href="/jsp-include">/jsp-include</a>">%> <span class="comment"><\%-- "/jsp-include" is mapped with "/jsp/scriptlets/include.jsp" --%></span><br/>
     &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
 </div>
 <div class="example include code">
-    <jsp:include page="scriptlets/include.jsp"/><br/>
+    <jsp:include page="/jsp-include"/> <%-- /jsp-include mapped with /jsp/scriptlets/include.jsp --%><br/>
 </div>
 <div class="example include code">
     <jsp:include page="../html/scriptlets/include.html"/><br/>

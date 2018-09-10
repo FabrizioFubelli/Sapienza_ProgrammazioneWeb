@@ -31,6 +31,16 @@
         <servlet-name>CookiesServlet</servlet-name>
         <servlet-class>CookiesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JspForward</servlet-name>
+        <description>Jsp test mapping (forward)</description>
+        <jsp-file>/jsp/scriptlets/forward.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>JspInclude</servlet-name>
+        <description>Jsp test mapping (include)</description>
+        <jsp-file>/jsp/scriptlets/include.jsp</jsp-file>
+    </servlet>
 
     <!-- Servlet mappings -->
     <servlet-mapping>
@@ -44,6 +54,14 @@
     <servlet-mapping>
         <servlet-name>CookiesServlet</servlet-name>
         <url-pattern>/servlet/Cookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JspForward</servlet-name>
+        <url-pattern>/jsp-forward</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JspInclude</servlet-name>
+        <url-pattern>/jsp-include</url-pattern>
     </servlet-mapping>
 
 </web-app>
