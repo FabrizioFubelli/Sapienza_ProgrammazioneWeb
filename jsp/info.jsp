@@ -123,6 +123,7 @@
     request.isRequestedSessionIdFromCookie() = <\%= request.isRequestedSessionIdFromCookie() %><br/>
     request.isRequestedSessionIdValid() = <\%= request.isRequestedSessionIdValid() %><br/>
     request.getAuthType() = <\%= request.getAuthType() %><br/>
+    request.getLocale() = <\%= request.getLocale() %><br/>
     <br/><strong>Request headers:</strong><br/>
     <\%<br/>
     &emsp;Enumeration&lt;String> requestHeaderNames = request.getHeaderNames();<br/>
@@ -150,6 +151,7 @@
     request.isRequestedSessionIdFromCookie() = <%= request.isRequestedSessionIdFromCookie() %><br/>
     request.isRequestedSessionIdValid() = <%= request.isRequestedSessionIdValid() %><br/>
     request.getAuthType() = <%= request.getAuthType() %><br/>
+    request.getLocale() = <%= request.getLocale() %><br/>
     <br/><strong>Request headers:</strong><br/>
     <%
         Enumeration<String> requestHeaderNames = request.getHeaderNames();
