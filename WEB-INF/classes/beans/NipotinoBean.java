@@ -2,7 +2,8 @@ package beans;  //NOTARE CHE IL BEAN VIENE MESSO IN UN PACKAGE
 
 public class NipotinoBean {
 
-    private String name, color;
+    private String name;
+    private String color;
 
 
     public NipotinoBean() {}

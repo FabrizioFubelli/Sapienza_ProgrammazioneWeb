@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.Objects, java.util.Enumeration" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.function.BiConsumer" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,14 +105,21 @@
 </div>
 <div class="example include code">
     <jsp:useBean id="nipotino" scope="application" class="beans.NipotinoBean" /><br/>
+
     <%
-        if (request.getParameter("qui") != null) {
+        Enumeration<String> parameterNames = request.getParameterNames();
+        List<String> acceptedParams = Arrays.asList("qui", "quo", "qua");
+        while (parameterNames.hasMoreElements()) {
+            String key = parameterNames.nextElement();
+            if (acceptedParams.contains(key)) {
     %>
-        <jsp:setProperty name="nipotino" property="name" value="Qui"/> <!-- name="id bean" -->
-        <jsp:setProperty name="nipotino" property="color" param="qui"/>
+                <jsp:setProperty name="nipotino" property="name" value="<%= key %>"/> <!-- name="id bean" -->
+                <jsp:setProperty name="nipotino" property="color" value="<%= request.getParameter(key) %>"/>
     <%
+            }
         }
     %>
+
     <jsp:getProperty name="nipotino" property="name"/> => <jsp:getProperty name="nipotino" property="color"/>
 </div>
 <br/>
