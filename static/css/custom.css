@@ -31,3 +31,6 @@ div.example.code {
 span.comment {
     color: grey !important;
 }
+span.comment a {
+    color: #3d87c5 !important;
+}

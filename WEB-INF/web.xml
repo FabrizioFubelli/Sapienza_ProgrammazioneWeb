@@ -57,7 +57,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>JspForward</servlet-name>
-        <url-pattern>/jsp-forward</url-pattern>
+        <url-pattern>/jsp-forward/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>JspInclude</servlet-name>

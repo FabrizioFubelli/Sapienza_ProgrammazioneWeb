@@ -38,7 +38,7 @@
 
 <h3>Standard action (<i>jsp:include</i>):</h3>
 <div class="example src">
-    &lt;jsp:include file="<a href="/jsp-include">/jsp-include</a>">%> <span class="comment"><\%-- "/jsp-include" is mapped with "/jsp/scriptlets/include.jsp" --%></span><br/>
+    &lt;jsp:include file="<a href="/jsp-include">/jsp-include</a>">%> <span class="comment"><\%-- "/jsp-include" is mapped with "<a href="/jsp/scriptlets/include.jsp">/jsp/scriptlets/include.jsp</a>" --%></span><br/>
     &lt;jsp:include file="<a href="../html/scriptlets/include.html">../html/scriptlets/include.html</a>">%><br/>
 </div>
 <div class="example include code">
