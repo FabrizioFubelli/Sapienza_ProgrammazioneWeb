@@ -23,6 +23,7 @@ public class ExampleTagHandler extends BodyTagSupport {
             throw new JspException( ioException.getMessage() );
         }
         return EVAL_BODY_INCLUDE;
+        //return SKIP_BODY;
     }
 
 }
