@@ -83,7 +83,7 @@
                 <td>Nome:</td>
                 <td>
                     <input type="text" minlength=1 size=35 name="firstName" title="name" required
-                            value="<example_tld:property property='firstName'/>"/>
+                           value="<example_tld:property property='firstName'/>"/>
                 </td>
             </tr>
             <tr>
@@ -97,7 +97,7 @@
                 <td>Email:</td>
                 <td>
                     <input type="email" size=35 name="emailAddress" title="email" required
-                            value="<example_tld:property property='emailAddress'/>"/>
+                           value="<example_tld:property property='emailAddress'/>"/>
                 </td>
             </tr>
             <tr>
