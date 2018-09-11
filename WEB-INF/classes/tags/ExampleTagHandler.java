@@ -17,13 +17,23 @@ public class ExampleTagHandler extends BodyTagSupport {
             JspWriter out = pageContext.getOut();
 
             // output content
-            out.print("Hi! I'm an Example message provided by \""+this.getClass().getName()+'"');
+            out.print("<div style=\"background: red;\" title=\""+"Hi! I'm an Example message provided by '"+this.getClass().getName()+"'\">");
         } catch( IOException ioException ) {
             // rethrow IOException to JSP container as JspException
             throw new JspException( ioException.getMessage() );
         }
         return EVAL_BODY_INCLUDE;
         //return SKIP_BODY;
+    }
+
+    public int doEndTag() {
+        try {
+            JspWriter out = pageContext.getOut();
+            out.print("</div>");
+        } catch(IOException ioe) {
+            System.out.println("Error in HeadingTag: " + ioe);
+        }
+        return(EVAL_PAGE); // Continue with rest of JSP page
     }
 
 }

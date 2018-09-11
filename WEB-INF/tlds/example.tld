@@ -10,6 +10,7 @@
         <name>example</name>
         <tag-class>tags.ExampleTagHandler</tag-class>
         <description>Inserisce un testo di esempio</description>
+        <body-content>JSP</body-content>
     </tag>
 
 
