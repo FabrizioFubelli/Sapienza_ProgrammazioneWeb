@@ -17,7 +17,7 @@ public class ExampleTagHandler extends TagSupport {
             JspWriter out = pageContext.getOut();
 
             // output content
-            out.print( "Messaggio proveniente dal tag" );
+            out.print("Hi! I'm an Example message provided by \""+this.getClass().getName()+'"');
         } catch( IOException ioException ) {
             // rethrow IOException to JSP container as JspException
             throw new JspException( ioException.getMessage() );

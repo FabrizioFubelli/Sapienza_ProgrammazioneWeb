@@ -17,10 +17,14 @@
 
 <h3>Tag Example:</h3>
 <div class="example src">
-    <\%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example" %>
+    <\%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example_tld" %><br/><br/>
+    <strong>Message from example tag:</strong><br/>
+    &lt;example_tld:example/><br/>
 </div>
 <div class="example code">
-    <%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example" %>
+    <%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example_tld" %>
+    <strong>Message from example tag:</strong><br/>
+    <example_tld:example/><br/>
 </div>
 <br/>
 
