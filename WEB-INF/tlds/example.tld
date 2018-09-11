@@ -38,4 +38,18 @@
     </tag>
 
 
+    <tag>
+        <name>property</name>
+        <tag-class>tags.ParameterTagHandler</tag-class>
+        <body-content>empty</body-content>
+        <description>Gestione corretta dei parametri di una richiesta</description>
+
+        <attribute>
+            <name>property</name>
+            <rtexprvalue>true</rtexprvalue>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+
 </taglib>
