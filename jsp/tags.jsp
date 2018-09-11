@@ -30,6 +30,19 @@
 
 
 
+<h3>Tag Attribute:</h3>
+<div class="example src">
+    <strong>Message from example tag:</strong><br/>
+    &lt;example_tld:attribute qui="red"/><br/>
+</div>
+<div class="example code">
+    <strong>Message from example tag:</strong><br/>
+    <example_tld:attribute qui="red" quo="blue" qua="green"/><br/>
+</div>
+<br/>
+
+
+
 
 </body>
 </html>

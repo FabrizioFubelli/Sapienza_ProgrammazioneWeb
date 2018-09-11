@@ -5,6 +5,7 @@
     <short-name>Tag Library Example</short-name>
     <description>Un esempio di libreria di tag</description>
 
+
     <tag>
         <name>example</name>
         <tag-class>tags.ExampleTagHandler</tag-class>
@@ -12,10 +13,29 @@
         <description>Inserisce un testo di esempio</description>
     </tag>
 
+
     <tag>
         <name>attribute</name>
         <tag-class>tags.AttributeTagHandler</tag-class>
         <body-content>empty</body-content>
         <description>Tag per imparare la gestione degli attributi</description>
+
+        <attribute>
+            <name>qui</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>quo</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>qua</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
     </tag>
+
+
 </taglib>
