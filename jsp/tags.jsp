@@ -15,7 +15,6 @@
 <h1>Tags</h1>
 
 
-
 <h3>Tag Example:</h3>
 <div class="example src">
     <\%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example" %>
