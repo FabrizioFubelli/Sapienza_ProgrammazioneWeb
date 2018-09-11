@@ -1,0 +1,15 @@
+<taglib>
+
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.1</jsp-version>
+    <short-name>Tag Library Example</short-name>
+    <description>Un esempio di libreria di tag</description>
+
+    <tag>
+        <name>example</name>
+        <tag-class>tags.ExampleTagHandler</tag-class>
+        <body-content>empty</body-content>
+        <description>Inserisce un testo di esempio</description>
+    </tag>
+
+</taglib>

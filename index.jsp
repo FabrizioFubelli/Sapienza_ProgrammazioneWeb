@@ -19,6 +19,8 @@
     <br>
     <a href="<%= response.encodeURL("/jsp/redirect_1.jsp") %>">/jsp/redirect_1.jsp</a>
     <br>
+    <a href="<%= response.encodeURL("/jsp/tags.jsp") %>">/jsp/tags.jsp</a>
+    <br>
 </p>
 <br>
 
