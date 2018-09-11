@@ -7,7 +7,7 @@ import java.io.*;
 import javax.servlet.jsp.*;
 import javax.servlet.jsp.tagext.*;
 
-public class ExampleTagHandler extends TagSupport {
+public class ExampleTagHandler extends BodyTagSupport {
 
     // Method called to begin tag processing
     public int doStartTag() throws JspException {
@@ -22,7 +22,7 @@ public class ExampleTagHandler extends TagSupport {
             // rethrow IOException to JSP container as JspException
             throw new JspException( ioException.getMessage() );
         }
-        return SKIP_BODY; // ignore the tag's body (alternativa a EVAL_BODY_INCLUDE)
+        return EVAL_BODY_INCLUDE;
     }
 
 }

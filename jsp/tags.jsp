@@ -24,7 +24,7 @@
 <div class="example code">
     <%@ taglib uri="/WEB-INF/tlds/example.tld" prefix="example_tld" %>
     <strong>Message from example tag:</strong><br/>
-    <example_tld:example/><br/>
+    <example_tld:example><br/>(this is the tag body)</example_tld:example><br/>
 </div>
 <br/>
 

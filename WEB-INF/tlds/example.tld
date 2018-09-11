@@ -9,7 +9,6 @@
     <tag>
         <name>example</name>
         <tag-class>tags.ExampleTagHandler</tag-class>
-        <body-content>empty</body-content>
         <description>Inserisce un testo di esempio</description>
     </tag>
 
