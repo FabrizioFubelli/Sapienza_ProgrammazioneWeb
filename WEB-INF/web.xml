@@ -72,7 +72,7 @@
             <url-pattern>/</url-pattern>
             <url-pattern>/jsp/info.jsp</url-pattern>
         </web-resource-collection>
-        <auth-constraint><!-- ruoli associati alle risorse -->
+        <auth-constraint> <!-- ruoli associati alle risorse -->
             <role-name>tomcat</role-name>
             <role-name>role1</role-name>
         </auth-constraint>
