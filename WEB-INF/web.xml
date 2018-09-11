@@ -80,8 +80,13 @@
 
     <login-config>
         <auth-method>BASIC</auth-method>
-        <realm-name>Esempio di autenticazione Basic </realm-name>
+        <realm-name>Esempio di autenticazione Basic</realm-name>
     </login-config>
+
+    <!--login-config>
+        <auth-method>DIGEST</auth-method>
+        <realm-name>Esempio di autenticazione Digest</realm-name>
+    </login-config-->
 
     <!--login-config>
         <auth-method>FORM</auth-method>
