@@ -12,4 +12,10 @@
         <description>Inserisce un testo di esempio</description>
     </tag>
 
+    <tag>
+        <name>attribute</name>
+        <tag-class>tags.AttributeTagHandler</tag-class>
+        <body-content>empty</body-content>
+        <description>Tag per imparare la gestione degli attributi</description>
+    </tag>
 </taglib>
